@@ -28,27 +28,3 @@ MongoDB: For storing and managing application data.
 Tools
 Git & GitHub: Version control and collaboration.
 Postman: API testing and debugging.
-Installation and Setup
-Prerequisites
-Make sure you have the following installed:
-
-Node.js (v14 or above)
-MongoDB (local or cloud-based)
-Git
-Steps
-Clone the Repository:
-
-git clone https://github.com/sahil25123/StaySphere
-cd staysphere
-Install Dependencies:
-
-npm install
-Set Up Environment Variables: Create a .env file in the root directory and configure the following:
-
-PORT=3000
-MONGO_URI=<your_mongodb_connection_string>
-SESSION_SECRET=<your_session_secret>
-Start the Application:
-
-npm start
-Access the Application: Visit http://localhost:3000 in your browser.
