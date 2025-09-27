@@ -1,0 +1,150 @@
+<% layout("/layouts/boillerplate") %>
+<main>
+<div class="create-listing-page py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow-lg border-0">
+          <div class="card-body p-5">
+            <h1 class="card-title text-center mb-4">Create Your Dream Listing</h1>
+            <p class="text-muted text-center mb-5">Share your space with travelers from around the world</p>
+            
+            <form method="post" action="/listings" class="needs-validation" novalidate  enctype="multipart/form-data">
+              <div class="mb-4">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name="title" id="title" class="form-control form-control-lg" placeholder="e.g., Cozy Beachfront Villa" required>
+                <div class="invalid-feedback">Please enter a title for your listing.</div>
+              </div>
+
+              <div class="mb-4">
+                <label for="description" class="form-label">Description</label>
+                <textarea name="description" id="description" class="form-control" rows="4" placeholder="Describe your space in detail..." required></textarea>
+                <div class="invalid-feedback">Please provide a description of your listing.</div>
+              </div>
+
+              <div class="mb-4">
+                <lable for="image" class="form-label">Upload Image</lable>
+                <input name="image" type="file" accept="image/*" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="category" class="form-label">Category</label>
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  id="categoryDropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Select Categories
+                </button>
+                <ul class="dropdown-menu p-3" aria-labelledby="categoryDropdown" style="max-height: 200px; overflow-y: auto;">
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="Trending" name="category" value="Trending">
+                      <label class="form-check-label" for="Trending">Trending</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="Mountains" name="category" value="Mountains">
+                      <label class="form-check-label" for="Mountains">Mountains</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="Beach" name="category" value="Beach">
+                      <label class="form-check-label" for="Beach">Beach</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="Hotel" name="category" value="Hotel">
+                      <label class="form-check-label" for="Hotel">Hotel</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="City" name="category" value="City">
+                      <label class="form-check-label" for="City">City</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="Pools" name="category" value="Pools">
+                      <label class="form-check-label" for="Pools">Pools</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="Farms" name="category" value="Farms">
+                      <label class="form-check-label" for="Farms">Farms</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="Arctic" name="category" value="Arctic">
+                      <label class="form-check-label" for="Arctic">Arctic</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="Igloo" name="category" value="Igloo">
+                      <label class="form-check-label" for="Igloo">Igloo</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="Boathouse" name="category" value="Boathouse">
+                      <label class="form-check-label" for="Boathouse">Boathouse</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="Historic" name="category" value="Historic">
+                      <label class="form-check-label" for="Historic">Historic</label>
+                    </div>
+                  </li>
+                  
+                </ul>
+              </div>
+              <small class="form-text text-muted">
+                Click the dropdown and select multiple categories by ticking the boxes.
+              </small>
+            </div>
+            
+
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <label for="price" class="form-label">Price per Night</label>
+                  <div class="input-group">
+                    <span class="input-group-text">₹</span>
+                    <input type="number" name="price" id="price" class="form-control" placeholder="e.g., 1000" required>
+                  <div class="invalid-feedback">Please enter a valid price.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="location" class="form-label">Location</label>
+                  <input type="text" name="location" id="location" class="form-control" placeholder="e.g., Mumbai" required>
+                  <div class="invalid-feedback">Please enter a location.</div>
+                </div>
+              </div>
+
+              <div class="mb-4"> 
+                    <label for="country" class="form-label">Country</label>
+                     <input type="text" name="country" id="country" class="form-control" placeholder="Enter country" required> 
+                    <div class="invalid-feedback"> Please enter a country. </div> 
+                </div>
+              </div>
+
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-lg">Create Listing</button>
+                <a href="/listings" class="btn btn-outline-secondary">Cancel</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
